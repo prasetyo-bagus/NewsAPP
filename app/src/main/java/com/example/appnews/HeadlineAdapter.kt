@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 // Adapter untuk RecyclerView yang menampilkan data headline berita
-class HeadlineAdapter (private val headlineDataList : ArrayList<HeadlineDataClass>) : RecyclerView.Adapter<HeadlineAdapter.HeadlineViewHolder>() {
+class HeadlineAdapter (private val headlineDataList : ArrayList<HeadlineDataClass>) : RecyclerView.Adapter<HeadlineAdapter.HeadlineViewHolder> () {
 
     // ViewHolder untuk item headline
     class HeadlineViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
