@@ -6,4 +6,6 @@
     <string name="sample_judul">Judul Berita Yang Akan Ditampilkan</string>
     <string name="headline">Headline</string>
     <string name="account">Account</string>
+    <string name="category">Category</string>
+    <string name="headlines">Headlines</string>
 </resources>
