@@ -5,11 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+
 
 /**
  * A simple [Fragment] subclass.
@@ -20,6 +24,11 @@ class HeadlineFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    // Dekalarasi Variabel Yang Akan Digunakan Untuk Inisialisasi Data Fragment
+    private lateinit var adapter: HeadlineAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var headlineArrayList: ArrayList<HeadlineDataClass>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,5 +64,26 @@ class HeadlineFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * Inisialisasi Daftar Item Pada Fragment Ini
+         * Dengan Sample Data Yang Ada Di Companion Objek
+         * Pada Class HeadlineDataClass
+         */
+        headlineArrayList = HeadlineDataClass.headlineSampleData()
+
+        // Mengatur RecyclerView dengan LinearLayoutManager vertikal
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recyclerViewHeadline)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+
+        // Mengatur adapter dengan data dan menghubungkannya ke RecyclerView
+        adapter = HeadlineAdapter(headlineArrayList)
+        recyclerView.adapter = adapter
     }
 }
