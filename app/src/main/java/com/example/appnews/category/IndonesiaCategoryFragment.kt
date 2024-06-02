@@ -23,7 +23,6 @@ private const val ARG_PARAM2 = "param2"
  * Use the [IndonesiaCategoryFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-@Suppress("UNREACHABLE_CODE")
 class IndonesiaCategoryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -47,31 +46,26 @@ class IndonesiaCategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-//        val view = inflater.inflate(R.layout.fragment_category, container, false)
-//
-//        val btnCategoryIndonesia = view.findViewById<Button>(R.id.btnCategoryIndonesia)
-//        val btnCategoryDunia = view.findViewById<Button>(R.id.btnCategoryDunia)
-//        val btnCategoryTeknologi = view.findViewById<Button>(R.id.btnCategoryTeknologi)
-//        val btnCategoryHiburan = view.findViewById<Button>(R.id.btnCategoryHiburan)
-//        val btnCategoryOlahraga = view.findViewById<Button>(R.id.btnCategoryOlahraga)
-//
-//        btnCategoryIndonesia.setOnClickListener {
-//            findNavController().navigate(R.id.action_category_bottom_menu_to_indonesiaCategoryFragment)
-//        }
-//        btnCategoryDunia.setOnClickListener {
-//            findNavController().navigate(R.id.action_category_bottom_menu_to_duniaCategoryFragment)
-//
-//        }
-//
-//        btnCategoryTeknologi.setOnClickListener {
-//            findNavController().navigate(R.id.action_category_bottom_menu_to_teknologiCategoryFragment)
-//        }
-//        btnCategoryHiburan.setOnClickListener {
-//            findNavController().navigate(R.id.action_category_bottom_menu_to_hiburanCategoryFragment)
-//        }
-//        btnCategoryOlahraga.setOnClickListener {
-//            findNavController().navigate(R.id.action_category_bottom_menu_to_teknologiCategoryFragment)
-//        }
+        val view = inflater.inflate(R.layout.fragment_indonesia_category, container, false)
+
+        val btnCategoryDunia = view.findViewById<Button>(R.id.btnCategoryDunia)
+        val btnCategoryTeknologi = view.findViewById<Button>(R.id.btnCategoryTeknologi)
+        val btnCategoryHiburan = view.findViewById<Button>(R.id.btnCategoryHiburan)
+        val btnCategoryOlahraga = view.findViewById<Button>(R.id.btnCategoryOlahraga)
+
+        btnCategoryDunia.setOnClickListener {
+            findNavController().navigate(R.id.action_indonesiaCategoryFragment_to_duniaCategoryFragment)
+        }
+
+        btnCategoryTeknologi.setOnClickListener {
+            findNavController().navigate(R.id.action_indonesiaCategoryFragment_to_teknologiCategoryFragment)
+        }
+        btnCategoryHiburan.setOnClickListener {
+            findNavController().navigate(R.id.action_indonesiaCategoryFragment_to_hiburanCategoryFragment)
+        }
+        btnCategoryOlahraga.setOnClickListener {
+            findNavController().navigate(R.id.action_indonesiaCategoryFragment_to_olahragaCategoryFragment)
+        }
         return view
     }
 

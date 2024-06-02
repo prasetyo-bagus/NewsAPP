@@ -68,12 +68,12 @@ class CategoryFragment : Fragment() {
         return view
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        // Navigasi otomatis ke fragmen Indonesia
-//        findNavController().navigate(R.id.action_category_bottom_menu_to_indonesiaCategoryFragment)
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Navigasi otomatis ke fragmen Indonesia
+        findNavController().navigate(R.id.action_category_bottom_menu_to_indonesiaCategoryFragment)
+    }
 
     private fun openFragment(fragmentId: Int) {
         // Menggunakan NavController untuk melakukan navigasi ke fragment tujuan

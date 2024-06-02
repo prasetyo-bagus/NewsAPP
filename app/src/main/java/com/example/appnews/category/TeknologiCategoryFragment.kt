@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.appnews.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +26,11 @@ class TeknologiCategoryFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    // Dekalarasi Variabel Yang Akan Digunakan Untuk Inisialisasi Data Fragment
+    private lateinit var adapter: TeknologiAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var teknologiArrayList: ArrayList<TeknologiDataClass>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,7 +44,7 @@ class TeknologiCategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_category, container, false)
+        val view = inflater.inflate(R.layout.fragment_teknologi_category, container, false)
 
         val btnCategoryIndonesia = view.findViewById<Button>(R.id.btnCategoryIndonesia)
         val btnCategoryDunia = view.findViewById<Button>(R.id.btnCategoryDunia)
@@ -46,21 +53,16 @@ class TeknologiCategoryFragment : Fragment() {
         val btnCategoryOlahraga = view.findViewById<Button>(R.id.btnCategoryOlahraga)
 
         btnCategoryIndonesia.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_indonesiaCategoryFragment)
+            findNavController().navigate(R.id.action_teknologiCategoryFragment_to_indonesiaCategoryFragment)
         }
         btnCategoryDunia.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_duniaCategoryFragment)
-
-        }
-
-        btnCategoryTeknologi.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_teknologiCategoryFragment)
+            findNavController().navigate(R.id.action_teknologiCategoryFragment_to_duniaCategoryFragment)
         }
         btnCategoryHiburan.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_hiburanCategoryFragment)
+            findNavController().navigate(R.id.action_teknologiCategoryFragment_to_hiburanCategoryFragment)
         }
         btnCategoryOlahraga.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_teknologiCategoryFragment)
+            findNavController().navigate(R.id.action_teknologiCategoryFragment_to_olahragaCategoryFragment)
         }
         return view
     }
@@ -89,4 +91,27 @@ class TeknologiCategoryFragment : Fragment() {
                 }
             }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * Inisialisasi Daftar Item Pada Fragment Ini
+         * Dengan Sample Data Yang Ada Di Companion Objek
+         * Pada Class TeknologiDataClass
+         */
+//        indonesiaArrayList = IndonesiaDataClass.indonesiaSampleData()
+        teknologiArrayList = TeknologiDataClass.teknologiSampleData()
+
+        // Mengatur RecyclerView dengan LinearLayoutManager vertikal
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recycleViewCategoryTeknologi)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+
+        // Mengatur adapter dengan data dan menghubungkannya ke RecyclerView
+        adapter = TeknologiAdapter(teknologiArrayList)
+        recyclerView.adapter = adapter
+    }
+
 }

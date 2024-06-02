@@ -44,7 +44,7 @@ class DuniaCategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_category, container, false)
+        val view = inflater.inflate(R.layout.fragment_dunia_category, container, false)
 
         val btnCategoryIndonesia = view.findViewById<Button>(R.id.btnCategoryIndonesia)
         val btnCategoryDunia = view.findViewById<Button>(R.id.btnCategoryDunia)
@@ -53,21 +53,17 @@ class DuniaCategoryFragment : Fragment() {
         val btnCategoryOlahraga = view.findViewById<Button>(R.id.btnCategoryOlahraga)
 
         btnCategoryIndonesia.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_indonesiaCategoryFragment)
-        }
-        btnCategoryDunia.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_duniaCategoryFragment)
-
+            findNavController().navigate(R.id.action_duniaCategoryFragment_to_indonesiaCategoryFragment)
         }
 
         btnCategoryTeknologi.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_teknologiCategoryFragment)
+            findNavController().navigate(R.id.action_duniaCategoryFragment_to_teknologiCategoryFragment)
         }
         btnCategoryHiburan.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_hiburanCategoryFragment)
+            findNavController().navigate(R.id.action_duniaCategoryFragment_to_hiburanCategoryFragment)
         }
         btnCategoryOlahraga.setOnClickListener {
-            findNavController().navigate(R.id.action_category_bottom_menu_to_teknologiCategoryFragment)
+            findNavController().navigate(R.id.action_duniaCategoryFragment_to_olahragaCategoryFragment)
         }
         return view
     }
