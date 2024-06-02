@@ -8,11 +8,11 @@
     <item
         android:id="@+id/headline_bottom_menu"
         android:icon="@drawable/ic_headline"
-        android:title="@string/headline"
+        android:title="@string/headlines"
         />
     <item
-        android:id="@+id/account_bottom_menu"
-        android:icon="@drawable/ic_account"
-        android:title="@string/account"
+        android:id="@+id/category_bottom_menu"
+        android:icon="@drawable/ic_category"
+        android:title="@string/category"
         />
 </menu>

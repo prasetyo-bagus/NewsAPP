@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/home_bottom_menu"
         android:name="com.example.appnews.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/headline_bottom_menu"
         android:name="com.example.appnews.HeadlineFragment"
-        android:label="fragment_headline"
+        android:label="Headline"
         tools:layout="@layout/fragment_headline" />
     <fragment
-        android:id="@+id/account_bottom_menu"
-        android:name="com.example.appnews.AccountFragment"
-        android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        android:id="@+id/category_bottom_menu"
+        android:name="com.example.appnews.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/category_account" />
 </navigation>
