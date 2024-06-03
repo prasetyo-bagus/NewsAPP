@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.appnews.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +26,11 @@ class HiburanCategoryFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    // Dekalarasi Variabel Yang Akan Digunakan Untuk Inisialisasi Data Fragment
+    private lateinit var adapter: HiburanAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var hiburanArrayList: ArrayList<HiburanDataClass>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -32,6 +39,8 @@ class HiburanCategoryFragment : Fragment() {
         }
     }
 
+
+    // fungsi untuk melakukan pindah fragment melalu button navigasi horizontal
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -84,4 +93,26 @@ class HiburanCategoryFragment : Fragment() {
                 }
             }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * Inisialisasi Daftar Item Pada Fragment Ini
+         * Dengan Sample Data Yang Ada Di Companion Objek
+         * Pada Class HiburanDataClass
+         */
+        hiburanArrayList = HiburanDataClass.hiburanSampleData()
+
+        // Mengatur RecyclerView dengan LinearLayoutManager vertikal
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recycleViewCategoryHiburan)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+
+        // Mengatur adapter dengan data dan menghubungkannya ke RecyclerView
+        adapter = HiburanAdapter(hiburanArrayList)
+        recyclerView.adapter = adapter
+    }
+
 }
