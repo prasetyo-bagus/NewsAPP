@@ -8,4 +8,9 @@
     <string name="account">Account</string>
     <string name="category">Category</string>
     <string name="headlines">Headlines</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="dunia">Dunia</string>
+    <string name="teknologi">Teknologi</string>
+    <string name="hiburan">Hiburan</string>
+    <string name="olahraga">Olahraga</string>
 </resources>

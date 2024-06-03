@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_navigation"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/home_bottom_menu">
 
     <fragment
@@ -19,5 +19,161 @@
         android:id="@+id/category_bottom_menu"
         android:name="com.example.appnews.CategoryFragment"
         android:label="Category"
-        tools:layout="@layout/category_account" />
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_category_bottom_menu_to_duniaCategoryFragment"
+            app:destination="@id/duniaCategoryFragment" />
+        <action
+            android:id="@+id/action_category_bottom_menu_to_indonesiaCategoryFragment"
+            app:destination="@id/indonesiaCategoryFragment" />
+        <action
+            android:id="@+id/action_category_bottom_menu_to_hiburanCategoryFragment"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_category_bottom_menu_to_olahragaCategoryFragment"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_category_bottom_menu_to_teknologiCategoryFragment"
+            app:destination="@id/teknologiCategoryFragment" />
+        <action
+            android:id="@+id/action_category_bottom_menu_to_teknologiCategoryFragment2"
+            app:destination="@id/teknologiCategoryFragment" />
+        <action
+            android:id="@+id/action_category_bottom_menu_to_hiburanCategoryFragment2"
+            app:destination="@id/hiburanCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/indonesiaCategoryFragment"
+        android:name="com.example.appnews.category.IndonesiaCategoryFragment"
+        android:label="IndonesiaCategoryFragment" >
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_duniaCategoryFragment"
+            app:destination="@id/duniaCategoryFragment" />
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_teknologiCategoryFragment"
+            app:destination="@id/teknologiCategoryFragment" />
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_hiburanCategoryFragment"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_olahragaCategoryFragment"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_hiburanCategoryFragment2"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_category_bottom_menu"
+            app:destination="@id/category_bottom_menu" />
+        <action
+            android:id="@+id/action_indonesiaCategoryFragment_to_teknologiCategoryFragment2"
+            app:destination="@id/teknologiCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/duniaCategoryFragment"
+        android:name="com.example.appnews.category.DuniaCategoryFragment"
+        android:label="DuniaCategoryFragment" >
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_indonesiaCategoryFragment"
+            app:destination="@id/indonesiaCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_hiburanCategoryFragment"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_olahragaCategoryFragment"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_teknologiCategoryFragment"
+            app:destination="@id/teknologiCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_olahragaCategoryFragment2"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_hiburanCategoryFragment2"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_category_bottom_menu"
+            app:destination="@id/category_bottom_menu" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_hiburanCategoryFragment3"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_olahragaCategoryFragment3"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_category_bottom_menu2"
+            app:destination="@id/category_bottom_menu" />
+        <action
+            android:id="@+id/action_duniaCategoryFragment_to_teknologiCategoryFragment2"
+            app:destination="@id/teknologiCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hiburanCategoryFragment"
+        android:name="com.example.appnews.category.HiburanCategoryFragment"
+        android:label="HiburanCategoryFragment" >
+        <action
+            android:id="@+id/action_hiburanCategoryFragment_to_olahragaCategoryFragment"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_hiburanCategoryFragment_to_duniaCategoryFragment"
+            app:destination="@id/duniaCategoryFragment" />
+        <action
+            android:id="@+id/action_hiburanCategoryFragment_to_category_bottom_menu"
+            app:destination="@id/category_bottom_menu" />
+        <action
+            android:id="@+id/action_hiburanCategoryFragment_to_indonesiaCategoryFragment"
+            app:destination="@id/indonesiaCategoryFragment" />
+        <action
+            android:id="@+id/action_hiburanCategoryFragment_to_teknologiCategoryFragment"
+            app:destination="@id/teknologiCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/olahragaCategoryFragment"
+        android:name="com.example.appnews.category.OlahragaCategoryFragment"
+        android:label="OlahragaCategoryFragment" >
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_hiburanCategoryFragment"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_duniaCategoryFragment"
+            app:destination="@id/duniaCategoryFragment" />
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_indonesiaCategoryFragment"
+            app:destination="@id/indonesiaCategoryFragment" />
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_category_bottom_menu"
+            app:destination="@id/category_bottom_menu" />
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_teknologiCategoryFragment"
+            app:destination="@id/teknologiCategoryFragment" />
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_hiburanCategoryFragment2"
+            app:destination="@id/hiburanCategoryFragment" />
+        <action
+            android:id="@+id/action_olahragaCategoryFragment_to_duniaCategoryFragment2"
+            app:destination="@id/duniaCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teknologiCategoryFragment"
+        android:name="com.example.appnews.category.TeknologiCategoryFragment"
+        android:label="TeknologiCategoryFragment" >
+        <action
+            android:id="@+id/action_teknologiCategoryFragment_to_olahragaCategoryFragment"
+            app:destination="@id/olahragaCategoryFragment" />
+        <action
+            android:id="@+id/action_teknologiCategoryFragment_to_indonesiaCategoryFragment"
+            app:destination="@id/indonesiaCategoryFragment" />
+        <action
+            android:id="@+id/action_teknologiCategoryFragment_to_duniaCategoryFragment"
+            app:destination="@id/duniaCategoryFragment" />
+        <action
+            android:id="@+id/action_teknologiCategoryFragment_to_category_bottom_menu"
+            app:destination="@id/category_bottom_menu" />
+        <action
+            android:id="@+id/action_teknologiCategoryFragment_to_duniaCategoryFragment2"
+            app:destination="@id/duniaCategoryFragment" />
+        <action
+            android:id="@+id/action_teknologiCategoryFragment_to_hiburanCategoryFragment"
+            app:destination="@id/hiburanCategoryFragment" />
+    </fragment>
+
 </navigation>
